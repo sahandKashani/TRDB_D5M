@@ -10,6 +10,9 @@
 #define TRDB_D5M_CHIP_VERSION_REG_PART_ID_MASK                                            (0xff00)
 #define TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_MASK                                    (0x00f0)
 #define TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_MASK                                   (0x000f)
+#define TRDB_D5M_CHIP_VERSION_REG_PART_ID(full_reg_value)                                 (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_PART_ID_MASK) >> 8)
+#define TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION(full_reg_value)                         (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_MASK) >> 4)
+#define TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION(full_reg_value)                        (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_ROW_START_REG                                                            (0x01)
@@ -36,6 +39,11 @@
 #define TRDB_D5M_OUTPUT_CONTROL_REG_FIFO_PARALLEL_DATA_MASK                               (0x0004)
 #define TRDB_D5M_OUTPUT_CONTROL_REG_CHIP_ENABLE_MASK                                      (0x0002)
 #define TRDB_D5M_OUTPUT_CONTROL_REG_SYNCHRONIZE_CHANGES_MASK                              (0X0001)
+#define TRDB_D5M_OUTPUT_CONTROL_REG_OUTPUT_SLEW_RATE(full_reg_value)                      (((full_reg_value) & TRDB_D5M_OUTPUT_CONTROL_REG_OUTPUT_SLEW_RATE_MASK) >> 10)
+#define TRDB_D5M_OUTPUT_CONTROL_REG_PIXCLK_SLEW_RATE(full_reg_value)                      (((full_reg_value) & TRDB_D5M_OUTPUT_CONTROL_REG_PIXCLK_SLEW_RATE_MASK) >> 7)
+#define TRDB_D5M_OUTPUT_CONTROL_REG_FIFO_PARALLEL_DATA(full_reg_value)                    (((full_reg_value) & TRDB_D5M_OUTPUT_CONTROL_REG_FIFO_PARALLEL_DATA_MASK) >> 2)
+#define TRDB_D5M_OUTPUT_CONTROL_REG_CHIP_ENABLE(full_reg_value)                           (((full_reg_value) & TRDB_D5M_OUTPUT_CONTROL_REG_CHIP_ENABLE_MASK) >> 1)
+#define TRDB_D5M_OUTPUT_CONTROL_REG_SYNCHRONIZE_CHANGES(full_reg_value)                   (((full_reg_value) & TRDB_D5M_OUTPUT_CONTROL_REG_SYNCHRONIZE_CHANGES_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG                                                  (0x08)
@@ -48,12 +56,18 @@
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_MASK                          (0x8000)
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_MASK                           (0x0700)
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_MASK                          (0x007f)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK(full_reg_value)               (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_MASK) >> 15)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK(full_reg_value)                (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_MASK) >> 8)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK(full_reg_value)               (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_RESTART_REG                                                              (0x0b)
 #define TRDB_D5M_RESTART_REG_TRIGGER_MASK                                                 (0x0004)
 #define TRDB_D5M_RESTART_REG_PAUSE_RESTART_MASK                                           (0x0002)
 #define TRDB_D5M_RESTART_REG_RESTART_MASK                                                 (0x0001)
+#define TRDB_D5M_RESTART_REG_TRIGGER(full_reg_value)                                      (((full_reg_value) & TRDB_D5M_RESTART_REG_TRIGGER_MASK) >> 2)
+#define TRDB_D5M_RESTART_REG_PAUSE_RESTART(full_reg_value)                                (((full_reg_value) & TRDB_D5M_RESTART_REG_PAUSE_RESTART_MASK) >> 1)
+#define TRDB_D5M_RESTART_REG_RESTART(full_reg_value)                                      (((full_reg_value) & TRDB_D5M_RESTART_REG_RESTART_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_SHUTTER_DELAY_REG                                                        (0x0c)
@@ -65,15 +79,20 @@
 #define TRDB_D5M_PLL_CONTROL_REG                                                          (0x10)
 #define TRDB_D5M_PLL_CONTROL_REG_USE_PLL_MASK                                             (0x0002)
 #define TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_MASK                                           (0x0001)
+#define TRDB_D5M_PLL_CONTROL_REG_USE_PLL(full_reg_value)                                  (((full_reg_value) & TRDB_D5M_PLL_CONTROL_REG_USE_PLL_MASK) >> 1)
+#define TRDB_D5M_PLL_CONTROL_REG_POWER_PLL(full_reg_value)                                (((full_reg_value) & TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_PLL_CONFIG_1_REG                                                         (0x11)
 #define TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_MASK                                       (0xff00)
 #define TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_MASK                                      (0x003f)
+#define TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR(full_reg_value)                            (((full_reg_value) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_MASK) >> 8)
+#define TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER(full_reg_value)                           (((full_reg_value) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_PLL_CONFIG_2_REG                                                         (0x12)
 #define TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_MASK                                     (0x001f)
+#define TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER(full_reg_value)                          (((full_reg_value) & TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_READ_MODE_1_REG                                                          (0x1e)
