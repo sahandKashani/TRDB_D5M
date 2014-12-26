@@ -64,6 +64,9 @@
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_READ(full_reg_value)            (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_MASK) >> 15)
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_READ(full_reg_value)             (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_MASK) >> 8)
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_READ(full_reg_value)            (((full_reg_value) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_MASK) >> 0)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_WRITE(value)                    (((value) << 15) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_INVERT_PIXEL_CLOCK_MASK)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_WRITE(value)                     (((value) << 8) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_SHIFT_PIXEL_CLOCK_MASK)
+#define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_WRITE(value)                    (((value) << 0) & TRDB_D5M_PIXEL_CLOCK_CONTROL_REG_DIVIDE_PIXEL_CLOCK_MASK)
 
 // RW
 #define TRDB_D5M_RESTART_REG                                                                (0x0b)
@@ -73,6 +76,9 @@
 #define TRDB_D5M_RESTART_REG_TRIGGER_READ(full_reg_value)                                   (((full_reg_value) & TRDB_D5M_RESTART_REG_TRIGGER_MASK) >> 2)
 #define TRDB_D5M_RESTART_REG_PAUSE_RESTART_READ(full_reg_value)                             (((full_reg_value) & TRDB_D5M_RESTART_REG_PAUSE_RESTART_MASK) >> 1)
 #define TRDB_D5M_RESTART_REG_RESTART_READ(full_reg_value)                                   (((full_reg_value) & TRDB_D5M_RESTART_REG_RESTART_MASK) >> 0)
+#define TRDB_D5M_RESTART_REG_TRIGGER_WRITE(value)                                           (((value) << 2) & TRDB_D5M_RESTART_REG_TRIGGER_MASK)
+#define TRDB_D5M_RESTART_REG_PAUSE_RESTART_WRITE(value)                                     (((value) << 1) & TRDB_D5M_RESTART_REG_PAUSE_RESTART_MASK)
+#define TRDB_D5M_RESTART_REG_RESTART_WRITE(value)                                           (((value) << 0) & TRDB_D5M_RESTART_REG_RESTART_MASK)
 
 // RW
 #define TRDB_D5M_SHUTTER_DELAY_REG                                                          (0x0c)
@@ -86,6 +92,8 @@
 #define TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_MASK                                             (0x0001)
 #define TRDB_D5M_PLL_CONTROL_REG_USE_PLL_READ(full_reg_value)                               (((full_reg_value) & TRDB_D5M_PLL_CONTROL_REG_USE_PLL_MASK) >> 1)
 #define TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_READ(full_reg_value)                             (((full_reg_value) & TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_MASK) >> 0)
+#define TRDB_D5M_PLL_CONTROL_REG_USE_PLL_WRITE(value)                                       (((value) << 1) & TRDB_D5M_PLL_CONTROL_REG_USE_PLL_MASK)
+#define TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_WRITE(value)                                     (((value) << 0) & TRDB_D5M_PLL_CONTROL_REG_POWER_PLL_MASK)
 
 // RW
 #define TRDB_D5M_PLL_CONFIG_1_REG                                                           (0x11)
@@ -93,11 +101,14 @@
 #define TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_MASK                                        (0x003f)
 #define TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_READ(full_reg_value)                         (((full_reg_value) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_MASK) >> 8)
 #define TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_READ(full_reg_value)                        (((full_reg_value) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_MASK) >> 0)
+#define TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_WRITE(value)                                 (((value) << 8) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_M_FACTOR_MASK)
+#define TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_WRITE(value)                                (((value) << 0) & TRDB_D5M_PLL_CONFIG_1_REG_PLL_N_DIVIDER_MASK)
 
 // RW
 #define TRDB_D5M_PLL_CONFIG_2_REG                                                           (0x12)
 #define TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_MASK                                       (0x001f)
 #define TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_READ(full_reg_value)                       (((full_reg_value) & TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_MASK) >> 0)
+#define TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_WRITE(value)                               (((value) << 0) & TRDB_D5M_PLL_CONFIG_2_REG_PLL_P1_DIVIDER_MASK)
 
 // RW
 #define TRDB_D5M_READ_MODE_1_REG                                                            (0x1e)
@@ -121,6 +132,16 @@
 #define TRDB_D5M_READ_MODE_1_REG_STROBE_ENABLE_READ(full_reg_value)                         (((full_reg_value) & TRDB_D5M_READ_MODE_1_REG_STROBE_ENABLE_MASK) >> 4)
 #define TRDB_D5M_READ_MODE_1_REG_STROBE_START_READ(full_reg_value)                          (((full_reg_value) & TRDB_D5M_READ_MODE_1_REG_STROBE_START_MASK) >> 2)
 #define TRDB_D5M_READ_MODE_1_REG_STROBE_END_READ(full_reg_value)                            (((full_reg_value) & TRDB_D5M_READ_MODE_1_REG_STROBE_END_MASK) >> 0)
+#define TRDB_D5M_READ_MODE_1_REG_XOR_LINE_VALID_WRITE(value)                                (((value) << 11) & TRDB_D5M_READ_MODE_1_REG_XOR_LINE_VALID_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_CONTINUOUS_LINE_VALID_WRITE(value)                         (((value) << 10) & TRDB_D5M_READ_MODE_1_REG_CONTINUOUS_LINE_VALID_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_INVERT_TRIGGER_WRITE(value)                                (((value) << 9) & TRDB_D5M_READ_MODE_1_REG_INVERT_TRIGGER_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_SNAPSHOT_WRITE(value)                                      (((value) << 8) & TRDB_D5M_READ_MODE_1_REG_SNAPSHOT_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_GLOBAL_RESET_WRITE(value)                                  (((value) << 7) & TRDB_D5M_READ_MODE_1_REG_GLOBAL_RESET_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_BULB_EXPOSURE_WRITE(value)                                 (((value) << 6) & TRDB_D5M_READ_MODE_1_REG_BULB_EXPOSURE_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_INVERT_STROBE_WRITE(value)                                 (((value) << 5) & TRDB_D5M_READ_MODE_1_REG_INVERT_STROBE_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_STROBE_ENABLE_WRITE(value)                                 (((value) << 4) & TRDB_D5M_READ_MODE_1_REG_STROBE_ENABLE_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_STROBE_START_WRITE(value)                                  (((value) << 2) & TRDB_D5M_READ_MODE_1_REG_STROBE_START_MASK)
+#define TRDB_D5M_READ_MODE_1_REG_STROBE_END_WRITE(value)                                    (((value) << 0) & TRDB_D5M_READ_MODE_1_REG_STROBE_END_MASK)
 // #define TRDB_D5M_READ_MODE_1_REG_STROBE_START_FIRST_TRIGGER                               (0)
 // #define TRDB_D5M_READ_MODE_1_REG_STROBE_START_START_OF_SIMULTANEOUS_EXPOSURE              (1)
 // #define TRDB_D5M_READ_MODE_1_REG_STROBE_START_SHUTTER_WIDTH                               (2)
@@ -140,6 +161,12 @@
 #define TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_ROWS_READ(full_reg_value)                        (((full_reg_value) & TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_ROWS_MASK) >> 11)
 #define TRDB_D5M_READ_MODE_2_REG_ROW_BLC_READ(full_reg_value)                               (((full_reg_value) & TRDB_D5M_READ_MODE_2_REG_ROW_BLC_MASK) >> 6)
 #define TRDB_D5M_READ_MODE_2_REG_COLUMN_SUM_READ(full_reg_value)                            (((full_reg_value) & TRDB_D5M_READ_MODE_2_REG_COLUMN_SUM_MASK) >> 5)
+#define TRDB_D5M_READ_MODE_2_REG_MIRROR_ROW_WRITE(value)                                    (((value) << 15) & TRDB_D5M_READ_MODE_2_REG_MIRROR_ROW_MASK)
+#define TRDB_D5M_READ_MODE_2_REG_MIRROR_COLUMN_WRITE(value)                                 (((value) << 14) & TRDB_D5M_READ_MODE_2_REG_MIRROR_COLUMN_MASK)
+#define TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_COLUMNS_WRITE(value)                             (((value) << 12) & TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_COLUMNS_MASK)
+#define TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_ROWS_WRITE(value)                                (((value) << 11) & TRDB_D5M_READ_MODE_2_REG_SHOW_DARK_ROWS_MASK)
+#define TRDB_D5M_READ_MODE_2_REG_ROW_BLC_WRITE(value)                                       (((value) << 6) & TRDB_D5M_READ_MODE_2_REG_ROW_BLC_MASK)
+#define TRDB_D5M_READ_MODE_2_REG_COLUMN_SUM_WRITE(value)                                    (((value) << 5) & TRDB_D5M_READ_MODE_2_REG_COLUMN_SUM_MASK)
 
 // RW
 #define TRDB_D5M_ROW_ADDRESS_MODE_REG                                                       (0x22)
@@ -147,6 +174,8 @@
 #define TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_SKIP_MASK                                         (0x0007)
 #define TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_BIN_READ(full_reg_value)                          (((full_reg_value) & TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_BIN_MASK) >> 4)
 #define TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_SKIP_READ(full_reg_value)                         (((full_reg_value) & TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_SKIP_MASK) >> 0)
+#define TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_BIN_WRITE(value)                                  (((value) << 4) & TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_BIN_MASK)
+#define TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_SKIP_WRITE(value)                                 (((value) << 0) & TRDB_D5M_ROW_ADDRESS_MODE_REG_ROW_SKIP_MASK)
 
 // RW
 #define TRDB_D5M_COLUMN_ADDRESS_MODE_REG                                                    (0x23)
@@ -154,6 +183,8 @@
 #define TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_SKIP_MASK                                   (0x0007)
 #define TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_BIN_READ(full_reg_value)                    (((full_reg_value) & TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_BIN_MASK) >> 4)
 #define TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_SKIP_READ(full_reg_value)                   (((full_reg_value) & TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_SKIP_MASK) >> 0)
+#define TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_BIN_WRITE(value)                            (((value) << 4) & TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_BIN_MASK)
+#define TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_SKIP_WRITE(value)                           (((value) << 0) & TRDB_D5M_COLUMN_ADDRESS_MODE_REG_COLUMN_SKIP_MASK)
 
 // RW
 #define TRDB_D5M_GREEN_1_GAIN_REG                                                           (0x2b)
@@ -163,6 +194,9 @@
 #define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_DIGITAL_GAIN_READ(full_reg_value)                 (((full_reg_value) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_DIGITAL_GAIN_MASK) >> 8)
 #define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_MULTIPLIER_READ(full_reg_value)            (((full_reg_value) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_MULTIPLIER_MASK) >> 6)
 #define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_GAIN_READ(full_reg_value)                  (((full_reg_value) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_GAIN_MASK) >> 0)
+#define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_DIGITAL_GAIN_WRITE(value)                         (((value) << 8) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_DIGITAL_GAIN_MASK)
+#define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_MULTIPLIER_WRITE(value)                    (((value) << 6) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_MULTIPLIER_MASK)
+#define TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_GAIN_WRITE(value)                          (((value) << 0) & TRDB_D5M_GREEN_1_GAIN_REG_GREEN_1_ANALOG_GAIN_MASK)
 
 // RW
 #define TRDB_D5M_BLUE_GAIN_REG                                                              (0x2c)
@@ -172,6 +206,9 @@
 #define TRDB_D5M_BLUE_GAIN_REG_BLUE_DIGITAL_GAIN_READ(full_reg_value)                       (((full_reg_value) & TRDB_D5M_BLUE_GAIN_REG_BLUE_DIGITAL_GAIN_MASK) >> 8)
 #define TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_MULTIPLIER_READ(full_reg_value)                  (((full_reg_value) & TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_MULTIPLIER_MASK) >> 6)
 #define TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_GAIN_READ(full_reg_value)                        (((full_reg_value) & TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_GAIN_MASK) >> 0)
+#define TRDB_D5M_BLUE_GAIN_REG_BLUE_DIGITAL_GAIN_WRITE(value)                               (((value) << 8) & TRDB_D5M_BLUE_GAIN_REG_BLUE_DIGITAL_GAIN_MASK)
+#define TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_MULTIPLIER_WRITE(value)                          (((value) << 6) & TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_MULTIPLIER_MASK)
+#define TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_GAIN_WRITE(value)                                (((value) << 0) & TRDB_D5M_BLUE_GAIN_REG_BLUE_ANALOG_GAIN_MASK)
 
 // RW
 #define TRDB_D5M_RED_GAIN_REG                                                               (0x2d)
@@ -181,6 +218,9 @@
 #define TRDB_D5M_RED_GAIN_REG_RED_DIGITAL_GAIN_READ(full_reg_value)                         (((full_reg_value) & TRDB_D5M_RED_GAIN_REG_RED_DIGITAL_GAIN_MASK) >> 8)
 #define TRDB_D5M_RED_GAIN_REG_RED_ANALOG_MULTIPLIER_READ(full_reg_value)                    (((full_reg_value) & TRDB_D5M_RED_GAIN_REG_RED_ANALOG_MULTIPLIER_MASK) >> 6)
 #define TRDB_D5M_RED_GAIN_REG_RED_ANALOG_GAIN_READ(full_reg_value)                          (((full_reg_value) & TRDB_D5M_RED_GAIN_REG_RED_ANALOG_GAIN_MASK) >> 0)
+#define TRDB_D5M_RED_GAIN_REG_RED_DIGITAL_GAIN_WRITE(value)                                 (((value) << 8) & TRDB_D5M_RED_GAIN_REG_RED_DIGITAL_GAIN_MASK)
+#define TRDB_D5M_RED_GAIN_REG_RED_ANALOG_MULTIPLIER_WRITE(value)                            (((value) << 6) & TRDB_D5M_RED_GAIN_REG_RED_ANALOG_MULTIPLIER_MASK)
+#define TRDB_D5M_RED_GAIN_REG_RED_ANALOG_GAIN_WRITE(value)                                  (((value) << 0) & TRDB_D5M_RED_GAIN_REG_RED_ANALOG_GAIN_MASK)
 
 // RW
 #define TRDB_D5M_GREEN_2_GAIN_REG                                                           (0x2e)
@@ -190,6 +230,9 @@
 #define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_DIGITAL_GAIN_READ(full_reg_value)                 (((full_reg_value) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_DIGITAL_GAIN_MASK) >> 8)
 #define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_MULTIPLIER_READ(full_reg_value)            (((full_reg_value) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_MULTIPLIER_MASK) >> 6)
 #define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_GAIN_READ(full_reg_value)                  (((full_reg_value) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_GAIN_MASK) >> 0)
+#define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_DIGITAL_GAIN_WRITE(value)                         (((value) << 8) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_DIGITAL_GAIN_MASK)
+#define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_MULTIPLIER_WRITE(value)                    (((value) << 6) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_MULTIPLIER_MASK)
+#define TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_GAIN_WRITE(value)                          (((value) << 0) & TRDB_D5M_GREEN_2_GAIN_REG_GREEN_2_ANALOG_GAIN_MASK)
 
 // WO
 #define TRDB_D5M_GLOBAL_GAIN_REG                                                            (0x35)
@@ -209,6 +252,8 @@
 #define TRDB_D5M_BLC_TUNE_1_REG_BLC_DAC_SETTLING_TIME_MASK                                  (0x00ff)
 #define TRDB_D5M_BLC_TUNE_1_REG_BLC_DELTA_DAMPING_READ(full_reg_value)                      (((full_reg_value) & TRDB_D5M_BLC_TUNE_1_REG_BLC_DELTA_DAMPING_MASK) >> 8)
 #define TRDB_D5M_BLC_TUNE_1_REG_BLC_DAC_SETTLING_TIME_READ(full_reg_value)                  (((full_reg_value) & TRDB_D5M_BLC_TUNE_1_REG_BLC_DAC_SETTLING_TIME_MASK) >> 0)
+#define TRDB_D5M_BLC_TUNE_1_REG_BLC_DELTA_DAMPING_WRITE(value)                              (((value) << 8) & TRDB_D5M_BLC_TUNE_1_REG_BLC_DELTA_DAMPING_MASK)
+#define TRDB_D5M_BLC_TUNE_1_REG_BLC_DAC_SETTLING_TIME_WRITE(value)                          (((value) << 0) & TRDB_D5M_BLC_TUNE_1_REG_BLC_DAC_SETTLING_TIME_MASK)
 
 // RW
 #define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG                                                   (0x5d)
@@ -216,6 +261,8 @@
 #define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_LOW_DELTA_THRESHOLD_MASK                      (0x007f)
 #define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_HIGH_DELTA_THRESHOLD_READ(full_reg_value)     (((full_reg_value) & TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_HIGH_DELTA_THRESHOLD_MASK) >> 8)
 #define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_LOW_DELTA_THRESHOLD_READ(full_reg_value)      (((full_reg_value) & TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_LOW_DELTA_THRESHOLD_MASK) >> 0)
+#define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_HIGH_DELTA_THRESHOLD_WRITE(value)             (((value) << 8) & TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_HIGH_DELTA_THRESHOLD_MASK)
+#define TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_LOW_DELTA_THRESHOLD_WRITE(value)              (((value) << 0) & TRDB_D5M_BLC_DELTA_THRESHOLDS_REG_BLC_LOW_DELTA_THRESHOLD_MASK)
 
 // RW
 #define TRDB_D5M_BLC_TUNE_2_REG                                                             (0x5e)
@@ -223,6 +270,8 @@
 #define TRDB_D5M_BLC_TUNE_2_REG_BLC_MAX_ADJUST_MASK                                         (0x01ff)
 #define TRDB_D5M_BLC_TUNE_2_REG_BLC_STEP_SIZE_READ(full_reg_value)                          (((full_reg_value) & TRDB_D5M_BLC_TUNE_2_REG_BLC_STEP_SIZE_MASK) >> 12)
 #define TRDB_D5M_BLC_TUNE_2_REG_BLC_MAX_ADJUST_READ(full_reg_value)                         (((full_reg_value) & TRDB_D5M_BLC_TUNE_2_REG_BLC_MAX_ADJUST_MASK) >> 0)
+#define TRDB_D5M_BLC_TUNE_2_REG_BLC_STEP_SIZE_WRITE(value)                                  (((value) << 12) & TRDB_D5M_BLC_TUNE_2_REG_BLC_STEP_SIZE_MASK)
+#define TRDB_D5M_BLC_TUNE_2_REG_BLC_MAX_ADJUST_WRITE(value)                                 (((value) << 0) & TRDB_D5M_BLC_TUNE_2_REG_BLC_MAX_ADJUST_MASK)
 
 // RW
 #define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG                                                  (0x5f)
@@ -230,6 +279,8 @@
 #define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_LOW_TARGET_THRESHOLD_MASK                    (0x007f)
 #define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_HIGH_TARGET_THRESHOLD_READ(full_reg_value)   (((full_reg_value) & TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_HIGH_TARGET_THRESHOLD_MASK) >> 8)
 #define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_LOW_TARGET_THRESHOLD_READ(full_reg_value)    (((full_reg_value) & TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_LOW_TARGET_THRESHOLD_MASK) >> 0)
+#define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_HIGH_TARGET_THRESHOLD_WRITE(value)           (((value) << 8) & TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_HIGH_TARGET_THRESHOLD_MASK)
+#define TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_LOW_TARGET_THRESHOLD_WRITE(value)            (((value) << 0) & TRDB_D5M_BLC_TARGET_THRESHOLDS_REG_BLC_LOW_TARGET_THRESHOLD_MASK)
 
 // RW
 #define TRDB_D5M_GREEN_1_OFFSET_REG                                                         (0x60)
@@ -253,6 +304,13 @@
 #define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_BINARY_SEARCH_READ(full_reg_value)     (((full_reg_value) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_BINARY_SEARCH_MASK) >> 11)
 #define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_CALIBRATION_READ(full_reg_value)       (((full_reg_value) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_CALIBRATION_MASK) >> 1)
 #define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_MANUAL_BLC_READ(full_reg_value)                (((full_reg_value) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_MANUAL_BLC_MASK) >> 0)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_FAST_SAMPLE_WRITE(value)               (((value) << 15) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_FAST_SAMPLE_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_LOCK_GREEN_CALIBRATION_WRITE(value)            (((value) << 14) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_LOCK_GREEN_CALIBRATION_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_LOCK_RED_BLUE_CALIBRATION_WRITE(value)         (((value) << 13) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_LOCK_RED_BLUE_CALIBRATION_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_RECALCULATE_BLACK_LEVEL_WRITE(value)           (((value) << 12) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_RECALCULATE_BLACK_LEVEL_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_BINARY_SEARCH_WRITE(value)             (((value) << 11) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_BINARY_SEARCH_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_CALIBRATION_WRITE(value)               (((value) << 1) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_DISABLE_CALIBRATION_MASK)
+#define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_MANUAL_BLC_WRITE(value)                        (((value) << 0) & TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG_MANUAL_BLC_MASK)
 
 // RW
 #define TRDB_D5M_RED_OFFSET_REG                                                             (0x63)
@@ -266,6 +324,8 @@
 #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_ENABLE_TEST_PATTERN_MASK                          (0x0001)
 #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_READ(full_reg_value)         (((full_reg_value) & TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_MASK) >> 3)
 #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_ENABLE_TEST_PATTERN_READ(full_reg_value)          (((full_reg_value) & TRDB_D5M_TEST_PATTERN_CONTROL_REG_ENABLE_TEST_PATTERN_MASK) >> 0)
+#define TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_WRITE(value)                 (((value) << 3) & TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_MASK)
+#define TRDB_D5M_TEST_PATTERN_CONTROL_REG_ENABLE_TEST_PATTERN_WRITE(value)                  (((value) << 0) & TRDB_D5M_TEST_PATTERN_CONTROL_REG_ENABLE_TEST_PATTERN_MASK)
 // #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_COLOR_FIELD                (0x0000)
 // #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_HORIZONTAL_GRADIENT        (0x0008)
 // #define TRDB_D5M_TEST_PATTERN_CONTROL_REG_TEST_PATTERN_CONTROL_VERTICAL_GRADIENT          (0x0010)
