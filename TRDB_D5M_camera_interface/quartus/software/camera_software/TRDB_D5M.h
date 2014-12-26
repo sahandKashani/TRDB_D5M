@@ -10,9 +10,9 @@
 #define TRDB_D5M_CHIP_VERSION_REG_PART_ID_MASK                                              (0xff00)
 #define TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_MASK                                      (0x00f0)
 #define TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_MASK                                     (0x000f)
-#define TRDB_D5M_CHIP_VERSION_REG_PART_ID(full_reg_value)                                   (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_PART_ID_MASK) >> 8)
-#define TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION(full_reg_value)                           (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_MASK) >> 4)
-#define TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION(full_reg_value)                          (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_MASK) >> 0)
+#define TRDB_D5M_CHIP_VERSION_REG_PART_ID_READ(full_reg_value)                              (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_PART_ID_MASK) >> 8)
+#define TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_READ(full_reg_value)                      (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_ANALOG_REVISION_MASK) >> 4)
+#define TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_READ(full_reg_value)                     (((full_reg_value) & TRDB_D5M_CHIP_VERSION_REG_DIGITAL_REVISION_MASK) >> 0)
 
 // RW
 #define TRDB_D5M_ROW_START_REG                                                              (0x01)
