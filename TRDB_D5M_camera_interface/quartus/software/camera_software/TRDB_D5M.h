@@ -19,21 +19,45 @@
 
 // RW
 #define TRDB_D5M_ROW_START_REG                                                              (0x01)
+#define TRDB_D5M_ROW_START_REG_MASK                                                         (0xffff)
+#define TRDB_D5M_ROW_START_REG_SHIFT_AMOUNT                                                 (0)
+#define TRDB_D5M_ROW_START_REG_READ(full_reg_value)                                         (((full_reg_value) & TRDB_D5M_ROW_START_REG_MASK) >> TRDB_D5M_ROW_START_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_ROW_START_REG_WRITE(value)                                                 (((value) << TRDB_D5M_ROW_START_REG_SHIFT_AMOUNT) & TRDB_D5M_ROW_START_REG_MASK)
 
 // RW
 #define TRDB_D5M_COLUMN_START_REG                                                           (0x02)
+#define TRDB_D5M_COLUMN_START_REG_MASK                                                      (0xffff)
+#define TRDB_D5M_COLUMN_START_REG_SHIFT_AMOUNT                                              (0)
+#define TRDB_D5M_COLUMN_START_REG_READ(full_reg_value)                                      (((full_reg_value) & TRDB_D5M_COLUMN_START_REG_MASK) >> TRDB_D5M_COLUMN_START_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_COLUMN_START_REG_WRITE(value)                                              (((value) << TRDB_D5M_COLUMN_START_REG_SHIFT_AMOUNT) & TRDB_D5M_COLUMN_START_REG_MASK)
 
 // RW
 #define TRDB_D5M_ROW_SIZE_REG                                                               (0x03)
+#define TRDB_D5M_ROW_SIZE_REG_MASK                                                          (0xffff)
+#define TRDB_D5M_ROW_SIZE_REG_SHIFT_AMOUNT                                                  (0)
+#define TRDB_D5M_ROW_SIZE_REG_READ(full_reg_value)                                          (((full_reg_value) & TRDB_D5M_ROW_SIZE_REG_MASK) >> TRDB_D5M_ROW_SIZE_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_ROW_SIZE_REG_WRITE(value)                                                  (((value) << TRDB_D5M_ROW_SIZE_REG_SHIFT_AMOUNT) & TRDB_D5M_ROW_SIZE_REG_MASK)
 
 // RW
 #define TRDB_D5M_COLUMN_SIZE_REG                                                            (0x04)
+#define TRDB_D5M_COLUMN_SIZE_REG_MASK                                                       (0xffff)
+#define TRDB_D5M_COLUMN_SIZE_REG_SHIFT_AMOUNT                                               (0)
+#define TRDB_D5M_COLUMN_SIZE_REG_READ(full_reg_value)                                       (((full_reg_value) & TRDB_D5M_COLUMN_SIZE_REG_MASK) >> TRDB_D5M_COLUMN_SIZE_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_COLUMN_SIZE_REG_WRITE(value)                                               (((value) << TRDB_D5M_COLUMN_SIZE_REG_SHIFT_AMOUNT) & TRDB_D5M_COLUMN_SIZE_REG_MASK)
 
 // RW
 #define TRDB_D5M_HORIZONTAL_BLANK_REG                                                       (0x05)
+#define TRDB_D5M_HORIZONTAL_BLANK_REG_MASK                                                  (0xffff)
+#define TRDB_D5M_HORIZONTAL_BLANK_REG_SHIFT_AMOUNT                                          (0)
+#define TRDB_D5M_HORIZONTAL_BLANK_REG_READ(full_reg_value)                                  (((full_reg_value) & TRDB_D5M_HORIZONTAL_BLANK_REG_MASK) >> TRDB_D5M_HORIZONTAL_BLANK_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_HORIZONTAL_BLANK_REG_WRITE(value)                                          (((value) << TRDB_D5M_HORIZONTAL_BLANK_REG_SHIFT_AMOUNT) & TRDB_D5M_HORIZONTAL_BLANK_REG_MASK)
 
 // RW
 #define TRDB_D5M_VERTICAL_BLANK_REG                                                         (0x06)
+#define TRDB_D5M_VERTICAL_BLANK_REG_MASK                                                    (0xffff)
+#define TRDB_D5M_VERTICAL_BLANK_REG_SHIFT_AMOUNT                                            (0)
+#define TRDB_D5M_VERTICAL_BLANK_REG_READ(full_reg_value)                                    (((full_reg_value) & TRDB_D5M_VERTICAL_BLANK_REG_MASK) >> TRDB_D5M_VERTICAL_BLANK_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_VERTICAL_BLANK_REG_WRITE(value)                                            (((value) << TRDB_D5M_VERTICAL_BLANK_REG_SHIFT_AMOUNT) & TRDB_D5M_VERTICAL_BLANK_REG_MASK)
 
 // RW
 #define TRDB_D5M_OUTPUT_CONTROL_REG                                                         (0x07)
@@ -60,9 +84,17 @@
 
 // RW
 #define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG                                                    (0x08)
+#define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_MASK                                               (0xffff)
+#define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_SHIFT_AMOUNT                                       (0)
+#define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_READ(full_reg_value)                               (((full_reg_value) & TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_MASK) >> TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_WRITE(value)                                       (((value) << TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_SHIFT_AMOUNT) & TRDB_D5M_SHUTTER_WIDTH_UPPER_REG_MASK)
 
 // RW
 #define TRDB_D5M_SHUTTER_WIDTH_LOWER_REG                                                    (0x09)
+#define TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_MASK                                               (0xffff)
+#define TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_SHIFT_AMOUNT                                       (0)
+#define TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_READ(full_reg_value)                               (((full_reg_value) & TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_MASK) >> TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_WRITE(value)                                       (((value) << TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_SHIFT_AMOUNT) & TRDB_D5M_SHUTTER_WIDTH_LOWER_REG_MASK)
 
 // RW
 #define TRDB_D5M_PIXEL_CLOCK_CONTROL_REG                                                    (0x0a)
@@ -96,9 +128,17 @@
 
 // RW
 #define TRDB_D5M_SHUTTER_DELAY_REG                                                          (0x0c)
+#define TRDB_D5M_SHUTTER_DELAY_REG_MASK                                                     (0xffff)
+#define TRDB_D5M_SHUTTER_DELAY_REG_SHIFT_AMOUNT                                             (0)
+#define TRDB_D5M_SHUTTER_DELAY_REG_READ(full_reg_value)                                     (((full_reg_value) & TRDB_D5M_SHUTTER_DELAY_REG_MASK) >> TRDB_D5M_SHUTTER_DELAY_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_SHUTTER_DELAY_REG_WRITE(value)                                             (((value) << TRDB_D5M_SHUTTER_DELAY_REG_SHIFT_AMOUNT) & TRDB_D5M_SHUTTER_DELAY_REG_MASK)
 
 // RW
 #define TRDB_D5M_RESET_REG                                                                  (0x0d)
+#define TRDB_D5M_RESET_REG_MASK                                                             (0xffff)
+#define TRDB_D5M_RESET_REG_SHIFT_AMOUNT                                                     (0)
+#define TRDB_D5M_RESET_REG_READ(full_reg_value)                                             (((full_reg_value) & TRDB_D5M_RESET_REG_MASK) >> TRDB_D5M_RESET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_RESET_REG_WRITE(value)                                                     (((value) << TRDB_D5M_RESET_REG_SHIFT_AMOUNT) & TRDB_D5M_RESET_REG_MASK)
 
 // RW
 #define TRDB_D5M_PLL_CONTROL_REG                                                            (0x10)
@@ -287,15 +327,31 @@
 
 // WO
 #define TRDB_D5M_GLOBAL_GAIN_REG                                                            (0x35)
+#define TRDB_D5M_GLOBAL_GAIN_REG_MASK                                                       (0xffff)
+#define TRDB_D5M_GLOBAL_GAIN_REG_SHIFT_AMOUNT                                               (0)
+#define TRDB_D5M_GLOBAL_GAIN_REG_READ(full_reg_value)                                       (((full_reg_value) & TRDB_D5M_GLOBAL_GAIN_REG_MASK) >> TRDB_D5M_GLOBAL_GAIN_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_GLOBAL_GAIN_REG_WRITE(value)                                               (((value) << TRDB_D5M_GLOBAL_GAIN_REG_SHIFT_AMOUNT) & TRDB_D5M_GLOBAL_GAIN_REG_MASK)
 
 // RW
 #define TRDB_D5M_ROW_BLACK_TARGET_REG                                                       (0x49)
+#define TRDB_D5M_ROW_BLACK_TARGET_REG_MASK                                                  (0xffff)
+#define TRDB_D5M_ROW_BLACK_TARGET_REG_SHIFT_AMOUNT                                          (0)
+#define TRDB_D5M_ROW_BLACK_TARGET_REG_READ(full_reg_value)                                  (((full_reg_value) & TRDB_D5M_ROW_BLACK_TARGET_REG_MASK) >> TRDB_D5M_ROW_BLACK_TARGET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_ROW_BLACK_TARGET_REG_WRITE(value)                                          (((value) << TRDB_D5M_ROW_BLACK_TARGET_REG_SHIFT_AMOUNT) & TRDB_D5M_ROW_BLACK_TARGET_REG_MASK)
 
 // RW
 #define TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG                                               (0x4b)
+#define TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_MASK                                          (0xffff)
+#define TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_SHIFT_AMOUNT                                  (0)
+#define TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_READ(full_reg_value)                          (((full_reg_value) & TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_MASK) >> TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_WRITE(value)                                  (((value) << TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_SHIFT_AMOUNT) & TRDB_D5M_ROW_BLACK_DEFAULT_OFFSET_REG_MASK)
 
 // RW
 #define TRDB_D5M_BLC_SAMPLE_SIZE_REG                                                        (0x5b)
+#define TRDB_D5M_BLC_SAMPLE_SIZE_REG_MASK                                                   (0xffff)
+#define TRDB_D5M_BLC_SAMPLE_SIZE_REG_SHIFT_AMOUNT                                           (0)
+#define TRDB_D5M_BLC_SAMPLE_SIZE_REG_READ(full_reg_value)                                   (((full_reg_value) & TRDB_D5M_BLC_SAMPLE_SIZE_REG_MASK) >> TRDB_D5M_BLC_SAMPLE_SIZE_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_BLC_SAMPLE_SIZE_REG_WRITE(value)                                           (((value) << TRDB_D5M_BLC_SAMPLE_SIZE_REG_SHIFT_AMOUNT) & TRDB_D5M_BLC_SAMPLE_SIZE_REG_MASK)
 
 // RW
 #define TRDB_D5M_BLC_TUNE_1_REG                                                             (0x5c)
@@ -343,9 +399,17 @@
 
 // RW
 #define TRDB_D5M_GREEN_1_OFFSET_REG                                                         (0x60)
+#define TRDB_D5M_GREEN_1_OFFSET_REG_MASK                                                    (0xffff)
+#define TRDB_D5M_GREEN_1_OFFSET_REG_SHIFT_AMOUNT                                            (0)
+#define TRDB_D5M_GREEN_1_OFFSET_REG_READ(full_reg_value)                                    (((full_reg_value) & TRDB_D5M_GREEN_1_OFFSET_REG_MASK) >> TRDB_D5M_GREEN_1_OFFSET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_GREEN_1_OFFSET_REG_WRITE(value)                                            (((value) << TRDB_D5M_GREEN_1_OFFSET_REG_SHIFT_AMOUNT) & TRDB_D5M_GREEN_1_OFFSET_REG_MASK)
 
 // RW
 #define TRDB_D5M_GREEN_2_OFFSET_REG                                                         (0x61)
+#define TRDB_D5M_GREEN_2_OFFSET_REG_MASK                                                    (0xffff)
+#define TRDB_D5M_GREEN_2_OFFSET_REG_SHIFT_AMOUNT                                            (0)
+#define TRDB_D5M_GREEN_2_OFFSET_REG_READ(full_reg_value)                                    (((full_reg_value) & TRDB_D5M_GREEN_2_OFFSET_REG_MASK) >> TRDB_D5M_GREEN_2_OFFSET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_GREEN_2_OFFSET_REG_WRITE(value)                                            (((value) << TRDB_D5M_GREEN_2_OFFSET_REG_SHIFT_AMOUNT) & TRDB_D5M_GREEN_2_OFFSET_REG_MASK)
 
 // RW
 #define TRDB_D5M_BLACK_LEVEL_CALIBRATION_REG                                                (0x62)
@@ -380,9 +444,17 @@
 
 // RW
 #define TRDB_D5M_RED_OFFSET_REG                                                             (0x63)
+#define TRDB_D5M_RED_OFFSET_REG_MASK                                                        (0xffff)
+#define TRDB_D5M_RED_OFFSET_REG_SHIFT_AMOUNT                                                (0)
+#define TRDB_D5M_RED_OFFSET_REG_READ(full_reg_value)                                        (((full_reg_value) & TRDB_D5M_RED_OFFSET_REG_MASK) >> TRDB_D5M_RED_OFFSET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_RED_OFFSET_REG_WRITE(value)                                                (((value) << TRDB_D5M_RED_OFFSET_REG_SHIFT_AMOUNT) & TRDB_D5M_RED_OFFSET_REG_MASK)
 
 // RW
 #define TRDB_D5M_BLUE_OFFSET_REG                                                            (0x64)
+#define TRDB_D5M_BLUE_OFFSET_REG_MASK                                                       (0xffff)
+#define TRDB_D5M_BLUE_OFFSET_REG_SHIFT_AMOUNT                                               (0)
+#define TRDB_D5M_BLUE_OFFSET_REG_READ(full_reg_value)                                       (((full_reg_value) & TRDB_D5M_BLUE_OFFSET_REG_MASK) >> TRDB_D5M_BLUE_OFFSET_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_BLUE_OFFSET_REG_WRITE(value)                                               (((value) << TRDB_D5M_BLUE_OFFSET_REG_SHIFT_AMOUNT) & TRDB_D5M_BLUE_OFFSET_REG_MASK)
 
 // RW / WO not specified in datasheet
 #define TRDB_D5M_TEST_PATTERN_CONTROL_REG                                                   (0xa0)
@@ -406,15 +478,31 @@
 
 // RW / WO not specified in datasheet
 #define TRDB_D5M_TEST_PATTERN_GREEN_REG                                                     (0xa1)
+#define TRDB_D5M_TEST_PATTERN_GREEN_REG_MASK                                                (0xffff)
+#define TRDB_D5M_TEST_PATTERN_GREEN_REG_SHIFT_AMOUNT                                        (0)
+#define TRDB_D5M_TEST_PATTERN_GREEN_REG_READ(full_reg_value)                                (((full_reg_value) & TRDB_D5M_TEST_PATTERN_GREEN_REG_MASK) >> TRDB_D5M_TEST_PATTERN_GREEN_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_TEST_PATTERN_GREEN_REG_WRITE(value)                                        (((value) << TRDB_D5M_TEST_PATTERN_GREEN_REG_SHIFT_AMOUNT) & TRDB_D5M_TEST_PATTERN_GREEN_REG_MASK)
 
 // RW / WO not specified in datasheet
 #define TRDB_D5M_TEST_PATTERN_RED_REG                                                       (0xa2)
+#define TRDB_D5M_TEST_PATTERN_RED_REG_MASK                                                  (0xffff)
+#define TRDB_D5M_TEST_PATTERN_RED_REG_SHIFT_AMOUNT                                          (0)
+#define TRDB_D5M_TEST_PATTERN_RED_REG_READ(full_reg_value)                                  (((full_reg_value) & TRDB_D5M_TEST_PATTERN_RED_REG_MASK) >> TRDB_D5M_TEST_PATTERN_RED_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_TEST_PATTERN_RED_REG_WRITE(value)                                          (((value) << TRDB_D5M_TEST_PATTERN_RED_REG_SHIFT_AMOUNT) & TRDB_D5M_TEST_PATTERN_RED_REG_MASK)
 
 // RW / WO not specified in datasheet
 #define TRDB_D5M_TEST_PATTERN_BLUE_REG                                                      (0xa3)
+#define TRDB_D5M_TEST_PATTERN_BLUE_REG_MASK                                                 (0xffff)
+#define TRDB_D5M_TEST_PATTERN_BLUE_REG_SHIFT_AMOUNT                                         (0)
+#define TRDB_D5M_TEST_PATTERN_BLUE_REG_READ(full_reg_value)                                 (((full_reg_value) & TRDB_D5M_TEST_PATTERN_BLUE_REG_MASK) >> TRDB_D5M_TEST_PATTERN_BLUE_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_TEST_PATTERN_BLUE_REG_WRITE(value)                                         (((value) << TRDB_D5M_TEST_PATTERN_BLUE_REG_SHIFT_AMOUNT) & TRDB_D5M_TEST_PATTERN_BLUE_REG_MASK)
 
 // RW / WO not specified in datasheet
 #define TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG                                                 (0xa4)
+#define TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_MASK                                            (0xffff)
+#define TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_SHIFT_AMOUNT                                    (0)
+#define TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_READ(full_reg_value)                            (((full_reg_value) & TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_MASK) >> TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_SHIFT_AMOUNT)
+#define TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_WRITE(value)                                    (((value) << TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_SHIFT_AMOUNT) & TRDB_D5M_TEST_PATTERN_BAR_WIDTH_REG_MASK)
 
 // RO
 #define TRDB_D5M_CHIP_VERSION_ALT_REG                                                       (0xff)
