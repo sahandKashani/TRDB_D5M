@@ -1,3 +1,6 @@
+#ifndef TRDB_D5M_H
+#define TRDB_D5M_H
+
 #define TRDB_D5M_I2C_WRITE_ADDRESS                                                                        (0xba)
 #define TRDB_D5M_I2C_READ_ADDRESS                                                                         (0xbb)
 
@@ -515,3 +518,5 @@
 #define TRDB_D5M_CHIP_VERSION_ALT_REG_DIGITAL_REVISION_READ(full_reg_value)                               (((full_reg_value) & TRDB_D5M_CHIP_VERSION_ALT_REG_DIGITAL_REVISION_MASK) >> TRDB_D5M_CHIP_VERSION_ALT_REG_DIGITAL_REVISION_SHIFT_AMOUNT)
 #define TRDB_D5M_CHIP_VERSION_ALT_REG_ANALOG_REVISION_READ(full_reg_value)                                (((full_reg_value) & TRDB_D5M_CHIP_VERSION_ALT_REG_ANALOG_REVISION_MASK) >> TRDB_D5M_CHIP_VERSION_ALT_REG_ANALOG_REVISION_SHIFT_AMOUNT)
 #define TRDB_D5M_CHIP_VERSION_ALT_REG_PART_ID_READ(full_reg_value)                                        (((full_reg_value) & TRDB_D5M_CHIP_VERSION_ALT_REG_PART_ID_MASK) >> TRDB_D5M_CHIP_VERSION_ALT_REG_PART_ID_SHIFT_AMOUNT)
+
+#endif
