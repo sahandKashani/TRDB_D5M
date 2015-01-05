@@ -1,6 +1,8 @@
 #ifndef TRDB_D5M_H
 #define TRDB_D5M_H
 
+// TODO : add default register values
+
 #define TRDB_D5M_I2C_WRITE_ADDRESS                                                                        (0xba)
 #define TRDB_D5M_I2C_READ_ADDRESS                                                                         (0xbb)
 
