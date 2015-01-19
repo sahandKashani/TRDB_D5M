@@ -4,7 +4,7 @@
 ##############
 Device        : TRDB-D5M camera module from terasic
 Author        : Sahand Kashani-Akhavan / Philémon Favrod
-Revision      : 1.0
+Revision      : 1.1
 Creation data : 19/01/2015
 */
 
