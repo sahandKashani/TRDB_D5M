@@ -1,6 +1,61 @@
 #ifndef TRDB_D5M_H
 #define TRDB_D5M_H
 
+#include <assert.h>
+#include <stdbool.h>
+#include "alt_types.h"
+
+///////////////////////
+// GENERAL FUNCTIONS //
+///////////////////////
+
+// Checks if a number is a power of 2.
+static bool TRDB_D5M_is_power_of_2(alt_u16 x) {
+    return (x != 0) && ((x & (x - 1)) == 0);
+}
+
+// Calculates log2 of a number. Attention: the number must be a power of 2
+static alt_u16 TRDB_D5M_log2(alt_u16 power_of_2) {
+    assert(TRDB_D5M_is_power_of_2(power_of_2) && "Error: must provide a power of 2 as input");
+
+    switch (power_of_2) {
+        case 0x0001: return 0;
+        case 0x0002: return 1;
+        case 0x0004: return 2;
+        case 0x0008: return 3;
+        case 0x0010: return 4;
+        case 0x0020: return 5;
+        case 0x0040: return 6;
+        case 0x0080: return 7;
+        case 0x0100: return 8;
+        case 0x0200: return 9;
+        case 0x0400: return 10;
+        case 0x0800: return 11;
+        case 0x1000: return 12;
+        case 0x2000: return 13;
+        case 0x4000: return 14;
+        case 0x8000: return 15;
+        default: assert(false);
+    }
+}
+
+static alt_u16 TRDB_D5M_shift_amount(alt_u16 mask) {
+    // (mask & -mask) clears all but the lowest bit of x
+    return TRDB_D5M_log2(mask & (~mask + 1));
+}
+
+static alt_u16 TRDB_D5M_READ(alt_u16 full_reg_value, alt_u16 mask) {
+    return (full_reg_value & mask) >> TRDB_D5M_shift_amount(mask);
+}
+
+static alt_u16 TRDB_D5M_WRITE(alt_u16 full_reg_value, alt_u16 mask, alt_u16 write_value) {
+    return (full_reg_value & (~mask)) | ((write_value << TRDB_D5M_shift_amount(mask)) & mask);
+}
+
+/////////////////////////////////////
+// TRDB-D5M I2C READ/WRITE ADDRESS //
+/////////////////////////////////////
+
 #define TRDB_D5M_I2C_WRITE_ADDRESS                                                                        (0xba)
 #define TRDB_D5M_I2C_READ_ADDRESS                                                                         (0xbb)
 
