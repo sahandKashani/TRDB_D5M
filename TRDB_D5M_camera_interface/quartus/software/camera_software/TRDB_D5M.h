@@ -1,3 +1,13 @@
+/*
+##############
+# TRDB_D5M.h #
+##############
+Device        : TRDB-D5M camera module from terasic
+Author        : Sahand Kashani-Akhavan / Philémon Favrod
+Revision      : 1.0
+Creation data : 19/01/2015
+*/
+
 #ifndef TRDB_D5M_H
 #define TRDB_D5M_H
 
