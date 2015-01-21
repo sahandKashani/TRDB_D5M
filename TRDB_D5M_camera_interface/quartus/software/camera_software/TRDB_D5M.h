@@ -2,10 +2,10 @@
 ##############
 # TRDB_D5M.h #
 ##############
-Device        : TRDB-D5M camera module from terasic
-Author        : Sahand Kashani-Akhavan / Philémon Favrod
-Revision      : 1.1
-Creation data : 19/01/2015
+Device            : TRDB-D5M camera module from terasic
+Author            : Sahand Kashani-Akhavan / Philémon Favrod
+Revision          : 1.2
+Modification date : 21/01/2015
 */
 
 #ifndef TRDB_D5M_H
@@ -19,34 +19,24 @@ Creation data : 19/01/2015
 // GENERAL FUNCTIONS //
 ///////////////////////
 
-// Checks if a number is a power of 2.
-static bool TRDB_D5M_is_power_of_2(alt_u16 x) {
-    return (x != 0) && ((x & (x - 1)) == 0);
-}
-
 // Calculates log2 of a number. Attention: the number must be a power of 2
 static alt_u16 TRDB_D5M_log2(alt_u16 power_of_2) {
-    assert(TRDB_D5M_is_power_of_2(power_of_2) && "Error: must provide a power of 2 as input");
-
-    switch (power_of_2) {
-        case 0x0001: return 0;
-        case 0x0002: return 1;
-        case 0x0004: return 2;
-        case 0x0008: return 3;
-        case 0x0010: return 4;
-        case 0x0020: return 5;
-        case 0x0040: return 6;
-        case 0x0080: return 7;
-        case 0x0100: return 8;
-        case 0x0200: return 9;
-        case 0x0400: return 10;
-        case 0x0800: return 11;
-        case 0x1000: return 12;
-        case 0x2000: return 13;
-        case 0x4000: return 14;
-        case 0x8000: return 15;
-        default: assert(false);
-    }
+    if      (power_of_2 == 0x0001) return 0;
+    else if (power_of_2 == 0x0002) return 1;
+    else if (power_of_2 == 0x0004) return 2;
+    else if (power_of_2 == 0x0008) return 3;
+    else if (power_of_2 == 0x0010) return 4;
+    else if (power_of_2 == 0x0020) return 5;
+    else if (power_of_2 == 0x0040) return 6;
+    else if (power_of_2 == 0x0080) return 7;
+    else if (power_of_2 == 0x0100) return 8;
+    else if (power_of_2 == 0x0200) return 9;
+    else if (power_of_2 == 0x0400) return 10;
+    else if (power_of_2 == 0x0800) return 11;
+    else if (power_of_2 == 0x1000) return 12;
+    else if (power_of_2 == 0x2000) return 13;
+    else if (power_of_2 == 0x4000) return 14;
+    else                           return 15;
 }
 
 static alt_u16 TRDB_D5M_shift_amount(alt_u16 mask) {
