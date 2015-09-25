@@ -1,1 +1,1 @@
-# Header file for Terasic TRDB-D5M camera module
+# Terasic TRDB-D5M camera acquisition system on Terasic DE0-Nano board.
