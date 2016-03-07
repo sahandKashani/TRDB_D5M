@@ -1,0 +1,18 @@
+{signal: [
+  {name: 'clk', wave: 'P.........'},
+  {},
+  ['inputs',
+    {name: 'valid_in', wave: '01..01..0.'},
+    {name: 'data_in[2..0]', wave: 'x222x222x.', data: ['01','10','11','00','01','10']},
+    {name: 'start_of_frame_in', wave: '010.......'},
+    {name: 'end_of_frame_in', wave: '0......10.'}
+  ],
+  {},
+  ['outputs',
+    {name: 'valid_out', wave: '0.....1010'},
+    {name: 'data_out[7..0]', wave: 'x.....2x2x', data: ['01 - 10 - 11 - 00','00 - 00 - 01 - 10']},
+    {name: 'end_of_frame_out', wave: '0.......10'}
+  ]
+],
+  "config" : {"hscale" : 3}
+}

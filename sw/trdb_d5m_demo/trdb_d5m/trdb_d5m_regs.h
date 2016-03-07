@@ -1,26 +1,26 @@
 /*
-##############
-# TRDB_D5M.h #
-##############
+###################
+# trdb_d5m_regs.h #
+###################
 Device            : TRDB-D5M camera module from terasic
 Author            : Sahand Kashani-Akhavan / Philémon Favrod
-Revision          : 1.2
-Modification date : 21/01/2015
+Revision          : 1.4
+Modification date : 07/03/2016
 */
 
-#ifndef TRDB_D5M_H
-#define TRDB_D5M_H
+#ifndef __TRDB_D5M_REGS_H__
+#define __TRDB_D5M_REGS_H__
 
 #include <assert.h>
 #include <stdbool.h>
-#include "alt_types.h"
+#include <stdint.h>
 
 ///////////////////////
 // GENERAL FUNCTIONS //
 ///////////////////////
 
 // Calculates log2 of a number. Attention: the number must be a power of 2
-static alt_u16 TRDB_D5M_log2(alt_u16 power_of_2) {
+static uint16_t TRDB_D5M_log2(uint16_t power_of_2) {
     if      (power_of_2 == 0x0001) return 0;
     else if (power_of_2 == 0x0002) return 1;
     else if (power_of_2 == 0x0004) return 2;
@@ -39,16 +39,16 @@ static alt_u16 TRDB_D5M_log2(alt_u16 power_of_2) {
     else                           return 15;
 }
 
-static alt_u16 TRDB_D5M_shift_amount(alt_u16 mask) {
+static uint16_t TRDB_D5M_shift_amount(uint16_t mask) {
     // (mask & -mask) clears all but the lowest bit of x
     return TRDB_D5M_log2(mask & (~mask + 1));
 }
 
-static alt_u16 TRDB_D5M_READ(alt_u16 full_reg_value, alt_u16 mask) {
+static uint16_t TRDB_D5M_READ(uint16_t full_reg_value, uint16_t mask) {
     return (full_reg_value & mask) >> TRDB_D5M_shift_amount(mask);
 }
 
-static alt_u16 TRDB_D5M_WRITE(alt_u16 full_reg_value, alt_u16 mask, alt_u16 write_value) {
+static uint16_t TRDB_D5M_WRITE(uint16_t full_reg_value, uint16_t mask, uint16_t write_value) {
     return (full_reg_value & (~mask)) | ((write_value << TRDB_D5M_shift_amount(mask)) & mask);
 }
 
@@ -525,4 +525,4 @@ static alt_u16 TRDB_D5M_WRITE(alt_u16 full_reg_value, alt_u16 mask, alt_u16 writ
 #define TRDB_D5M_CHIP_VERSION_ALT_REG_ANALOG_REVISION_READ(full_reg_value)                                (TRDB_D5M_READ((full_reg_value), TRDB_D5M_CHIP_VERSION_ALT_REG_ANALOG_REVISION_MASK))
 #define TRDB_D5M_CHIP_VERSION_ALT_REG_PART_ID_READ(full_reg_value)                                        (TRDB_D5M_READ((full_reg_value), TRDB_D5M_CHIP_VERSION_ALT_REG_PART_ID_MASK))
 
-#endif
+#endif /* __TRDB_D5M_REGS_H__ */
