@@ -30,20 +30,41 @@ uint16_t max_pixel_value(uint16_t *frame, uint32_t width, uint32_t height) {
     return max;
 }
 
-bool write_pgm(uint16_t *frame, uint32_t width, uint32_t height, const char *filename) {
+bool write_ppm(uint16_t *frame, uint32_t width, uint32_t height, const char *filename) {
     FILE *foutput = fopen(filename, "w");
     if (!foutput) {
         printf("Error: could not open \"%s\" for writing\n", filename);
         return false;
     }
 
-    fprintf(foutput, "P2\n"); /* PGM magic number */
+    fprintf(foutput, "P3\n"); /* PPM magic number */
     fprintf(foutput, "%" PRIu32 " %" PRIu32 "\n", width, height); /* frame dimensions */
     fprintf(foutput, "%" PRIu16 "\n", max_pixel_value(frame, width, height)); /* max value */
 
     for (uint32_t row = 0; row < height; row++) {
         for (uint32_t col = 0; col < width; col++) {
-            fprintf(foutput, "%05" PRIu16, frame[row * width + col]);
+
+            if (row % 2 == 0 && col % 2 == 0) {
+                /* even row, even col = G1 */
+                fprintf(foutput, "%05" PRIu16 " ", 0);                        /* R */
+                fprintf(foutput, "%05" PRIu16 " ", frame[row * width + col]); /* G */
+                fprintf(foutput, "%05" PRIu16    , 0);                        /* B */
+            } else if (row % 2 == 0 && col % 2 == 1) {
+                /* even row, odd col = R */
+                fprintf(foutput, "%05" PRIu16 " ", frame[row * width + col]); /* R */
+                fprintf(foutput, "%05" PRIu16 " ", 0);                        /* G */
+                fprintf(foutput, "%05" PRIu16    , 0);                        /* B */
+            } else if (row % 2 == 1 && col % 2 == 0) {
+                /* odd row, even col = B */
+                fprintf(foutput, "%05" PRIu16 " ", 0);                        /* R */
+                fprintf(foutput, "%05" PRIu16 " ", 0);                        /* G */
+                fprintf(foutput, "%05" PRIu16    , frame[row * width + col]); /* B */
+            } else if (row % 2 == 1 && col % 2 == 1) {
+                /* odd row, odd col = G2 */
+                fprintf(foutput, "%05" PRIu16 " ", 0);                        /* R */
+                fprintf(foutput, "%05" PRIu16 " ", frame[row * width + col]); /* G */
+                fprintf(foutput, "%05" PRIu16    , 0);                        /* B */
+            }
 
             if (col != (width - 1)) {
                 fprintf(foutput, " ");
@@ -129,9 +150,9 @@ int main(void) {
     /*
      * write image to host
      */
-    if (!write_pgm((uint16_t *) frame,
+    if (!write_ppm((uint16_t *) frame,
                    trdb_d5m_frame_width(&trdb_d5m), trdb_d5m_frame_height(&trdb_d5m),
-                   "/mnt/host/image.pgm")) {
+                   "/mnt/host/image.ppm")) {
         printf("Error: could not write image to file\n");
         return EXIT_FAILURE;
     }
