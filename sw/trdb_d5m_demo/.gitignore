@@ -8,5 +8,6 @@
 !cmos_sensor_input
 !demo.c
 !i2c
+!Makefile
 !msgdma
 !trdb_d5m/
