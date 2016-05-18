@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element cmos_sensor_acquisition_0
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element cmos_sensor_acquisition_0.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element i2c_0
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element i2c_0.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
+   element mm_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element sysclk
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element trdb_d5m_pixclk
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="EP4CE22F17C6" />
+ <parameter name="deviceFamily" value="Cyclone IV E" />
+ <parameter name="deviceSpeedGrade" value="6" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="trdb_d5m.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk_sys" internal="sysclk.clk_in" type="clock" dir="end" />
+ <interface
+   name="clk_trdb_d5m_pixclk"
+   internal="trdb_d5m_pixclk.clk_in"
+   type="clock"
+   dir="end" />
+ <interface
+   name="cmos_sensor_acquisition_0_cmos_sensor_input_irq"
+   internal="cmos_sensor_acquisition_0.cmos_sensor_input_irq"
+   type="interrupt"
+   dir="end" />
+ <interface name="i2c" internal="i2c_0.i2c" type="conduit" dir="end" />
+ <interface
+   name="i2c_interrupt_sender"
+   internal="i2c_0.interrupt_sender"
+   type="interrupt"
+   dir="end" />
+ <interface
+   name="master"
+   internal="cmos_sensor_acquisition_0.avalon_master"
+   type="avalon"
+   dir="start" />
+ <interface
+   name="msgdma_csr_irq"
+   internal="cmos_sensor_acquisition_0.msgdma_csr_irq"
+   type="interrupt"
+   dir="end" />
+ <interface name="reset" internal="sysclk.clk_in_reset" type="reset" dir="end" />
+ <interface name="slave" internal="mm_bridge_0.s0" type="avalon" dir="end" />
+ <interface
+   name="trdb_d5m_d"
+   internal="cmos_sensor_acquisition_0.cmos_sensor"
+   type="conduit"
+   dir="end" />
+ <module
+   name="cmos_sensor_acquisition_0"
+   kind="cmos_sensor_acquisition"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE22F17C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <parameter name="CLK_IN_CLOCK_FREQUENCY" value="10000000" />
+  <parameter name="CLK_OUT_CLOCK_FREQUENCY" value="50000000" />
+  <parameter name="CMOS_SENSOR_INPUT_DEBAYER_ENABLE" value="false" />
+  <parameter name="CMOS_SENSOR_INPUT_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="CMOS_SENSOR_INPUT_FIFO_DEPTH" value="32" />
+  <parameter name="CMOS_SENSOR_INPUT_MAX_HEIGHT" value="1944" />
+  <parameter name="CMOS_SENSOR_INPUT_MAX_WIDTH" value="2592" />
+  <parameter name="CMOS_SENSOR_INPUT_OUTPUT_WIDTH" value="16" />
+  <parameter name="CMOS_SENSOR_INPUT_PACKER_ENABLE" value="false" />
+  <parameter name="CMOS_SENSOR_INPUT_PIX_DEPTH" value="12" />
+  <parameter name="CMOS_SENSOR_INPUT_SAMPLE_EDGE" value="FALLING" />
+  <parameter name="DC_FIFO_DEPTH" value="16" />
+  <parameter name="DC_FIFO_WIDTH" value="32" />
+  <parameter name="MSGDMA_BURST_ENABLE" value="1" />
+  <parameter name="MSGDMA_DATA_FIFO_DEPTH" value="64" />
+  <parameter name="MSGDMA_DATA_WIDTH" value="32" />
+  <parameter name="MSGDMA_DESCRIPTOR_FIFO_DEPTH" value="8" />
+  <parameter name="MSGDMA_MAX_BURST_COUNT" value="16" />
+  <parameter name="MSGDMA_MAX_BYTE" value="8388608" />
+ </module>
+ <module name="i2c_0" kind="i2c" version="15.1" enabled="1" />
+ <module
+   name="mm_bridge_0"
+   kind="altera_avalon_mm_bridge"
+   version="15.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ADDRESS_WIDTH" value="10" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LINEWRAPBURSTS" value="0" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="SYSINFO_ADDR_WIDTH" value="7" />
+  <parameter name="USE_AUTO_ADDRESS_WIDTH" value="1" />
+  <parameter name="USE_RESPONSE" value="0" />
+ </module>
+ <module name="sysclk" kind="clock_source" version="15.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module name="trdb_d5m_pixclk" kind="clock_source" version="15.1" enabled="1">
+  <parameter name="clockFrequency" value="10000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="mm_bridge_0.m0"
+   end="cmos_sensor_acquisition_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.1"
+   start="mm_bridge_0.m0"
+   end="i2c_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="clock" version="15.1" start="sysclk.clk" end="mm_bridge_0.clk" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="trdb_d5m_pixclk.clk"
+   end="cmos_sensor_acquisition_0.clk_in_clk" />
+ <connection
+   kind="clock"
+   version="15.1"
+   start="sysclk.clk"
+   end="cmos_sensor_acquisition_0.clk_out_clk" />
+ <connection kind="clock" version="15.1" start="sysclk.clk" end="i2c_0.clock" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="trdb_d5m_pixclk.clk_reset"
+   end="cmos_sensor_acquisition_0.clk_in_reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="sysclk.clk_reset"
+   end="trdb_d5m_pixclk.clk_in_reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="sysclk.clk_reset"
+   end="cmos_sensor_acquisition_0.clk_out_reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="sysclk.clk_reset"
+   end="mm_bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="sysclk.clk_reset"
+   end="i2c_0.reset" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

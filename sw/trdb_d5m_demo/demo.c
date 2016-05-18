@@ -88,7 +88,9 @@ int main(void) {
     /*
      * instantiate camera control structure
      */
-    trdb_d5m_dev trdb_d5m = TRDB_D5M_INST(CMOS_SENSOR_ACQUISITION_0_CMOS_SENSOR_INPUT_0, CMOS_SENSOR_ACQUISITION_0_MSGDMA_0, I2C_0);
+    trdb_d5m_dev trdb_d5m = TRDB_D5M_INST(TRDB_D5M_0_CMOS_SENSOR_ACQUISITION_0_CMOS_SENSOR_INPUT_0,
+                                          TRDB_D5M_0_CMOS_SENSOR_ACQUISITION_0_MSGDMA_0,
+                                          TRDB_D5M_0_I2C_0);
 
     /*
      * initialize camera

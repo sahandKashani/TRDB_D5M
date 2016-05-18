@@ -44,7 +44,7 @@ trdb_d5m_dev trdb_d5m_inst(void     *cmos_sensor_acquisition_cmos_sensor_input_b
  * provide the component's prefix, and the corresponding device structure is
  * returned.
  */
-#define TRDB_D5M_INST(prefix_cmos_sensor_input, prefix_msgdma, prefix_i2c)                 \
+#define TRDB_D5M_INST(prefix_cmos_sensor_input, prefix_msgdma, prefix_i2c)      \
         trdb_d5m_inst(((void *) prefix_cmos_sensor_input ## _BASE),             \
                       prefix_cmos_sensor_input ## _PIX_DEPTH,                   \
                       prefix_cmos_sensor_input ## _MAX_WIDTH,                   \
