@@ -106,6 +106,27 @@ typedef struct msgdma_dev {
 msgdma_dev msgdma_csr_descriptor_response_inst(void *csr_base, void *descriptor_base, void *response_base, uint32_t descriptor_fifo_depth, uint32_t response_fifo_depth, uint8_t csr_burst_enable, uint8_t csr_burst_wrapping_support, uint32_t csr_data_fifo_depth, uint32_t csr_data_width, uint32_t csr_max_burst_count, uint32_t csr_max_byte, uint64_t csr_max_stride, uint8_t csr_programmable_burst_enable, uint8_t csr_stride_enable, uint8_t csr_enhanced_features, uint8_t csr_response_port);
 msgdma_dev msgdma_csr_descriptor_inst(void *csr_base, void *descriptor_base, uint32_t descriptor_fifo_depth, uint8_t csr_burst_enable, uint8_t csr_burst_wrapping_support, uint32_t csr_data_fifo_depth, uint32_t csr_data_width, uint32_t csr_max_burst_count, uint32_t csr_max_byte, uint64_t csr_max_stride, uint8_t csr_programmable_burst_enable, uint8_t csr_stride_enable, uint8_t csr_enhanced_features, uint8_t csr_response_port);
 
+/*
+ * Helper macro for easily constructing device structures. The user needs to
+ * provide the component's prefix, and the corresponding device structure is
+ * returned.
+ */
+#define MSGDMA_CSR_DESCRIPTOR_INST(prefix)                                        \
+    msgdma_csr_descriptor_inst(((void *) prefix ## _CSR_BASE),                    \
+                               ((void *) prefix ## _DESCRIPTOR_SLAVE_BASE),       \
+                               prefix ## _DESCRIPTOR_SLAVE_DESCRIPTOR_FIFO_DEPTH, \
+                               prefix ## _CSR_BURST_ENABLE,                       \
+                               prefix ## _CSR_BURST_WRAPPING_SUPPORT,             \
+                               prefix ## _CSR_DATA_FIFO_DEPTH,                    \
+                               prefix ## _CSR_DATA_WIDTH,                         \
+                               prefix ## _CSR_MAX_BURST_COUNT,                    \
+                               prefix ## _CSR_MAX_BYTE,                           \
+                               prefix ## _CSR_MAX_STRIDE,                         \
+                               prefix ## _CSR_PROGRAMMABLE_BURST_ENABLE,          \
+                               prefix ## _CSR_STRIDE_ENABLE,                      \
+                               prefix ## _CSR_ENHANCED_FEATURES,                  \
+                               prefix ## _CSR_RESPONSE_PORT)
+
 void msgdma_init(msgdma_dev *dev);
 
 void msgdma_register_callback(msgdma_dev *dev, msgdma_callback callback, uint32_t control, void *context);

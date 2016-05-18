@@ -36,6 +36,35 @@ cmos_sensor_acquisition_dev cmos_sensor_acquisition_inst(void     *cmos_sensor_i
                                                          uint8_t  msgdma_csr_enhanced_features,
                                                          uint8_t  msgdma_csr_response_port);
 
+/*
+ * Helper macro for easily constructing device structures. The user needs to
+ * provide the component's prefix, and the corresponding device structure is
+ * returned.
+ */
+#define CMOS_SENSOR_ACQUISITION_INST(prefix_cmos_sensor_input, prefix_msgdma)              \
+    cmos_sensor_acquisition_inst(((void *) prefix_cmos_sensor_input ## _BASE),             \
+                                 prefix_cmos_sensor_input ## _PIX_DEPTH,                   \
+                                 prefix_cmos_sensor_input ## _MAX_WIDTH,                   \
+                                 prefix_cmos_sensor_input ## _MAX_HEIGHT,                  \
+                                 prefix_cmos_sensor_input ## _OUTPUT_WIDTH,                \
+                                 prefix_cmos_sensor_input ## _FIFO_DEPTH,                  \
+                                 prefix_cmos_sensor_input ## _DEBAYER_ENABLE,              \
+                                 prefix_cmos_sensor_input ## _PACKER_ENABLE,               \
+                                 ((void *) prefix_msgdma ## _CSR_BASE),                    \
+                                 ((void *) prefix_msgdma ## _DESCRIPTOR_SLAVE_BASE),       \
+                                 prefix_msgdma ## _DESCRIPTOR_SLAVE_DESCRIPTOR_FIFO_DEPTH, \
+                                 prefix_msgdma ## _CSR_BURST_ENABLE,                       \
+                                 prefix_msgdma ## _CSR_BURST_WRAPPING_SUPPORT,             \
+                                 prefix_msgdma ## _CSR_DATA_FIFO_DEPTH,                    \
+                                 prefix_msgdma ## _CSR_DATA_WIDTH,                         \
+                                 prefix_msgdma ## _CSR_MAX_BURST_COUNT,                    \
+                                 prefix_msgdma ## _CSR_MAX_BYTE,                           \
+                                 prefix_msgdma ## _CSR_MAX_STRIDE,                         \
+                                 prefix_msgdma ## _CSR_PROGRAMMABLE_BURST_ENABLE,          \
+                                 prefix_msgdma ## _CSR_STRIDE_ENABLE,                      \
+                                 prefix_msgdma ## _CSR_ENHANCED_FEATURES,                  \
+                                 prefix_msgdma ## _CSR_RESPONSE_PORT)
+
 void cmos_sensor_acquisition_init(cmos_sensor_acquisition_dev *dev);
 
 void cmos_sensor_acquisition_configure(cmos_sensor_acquisition_dev *dev);

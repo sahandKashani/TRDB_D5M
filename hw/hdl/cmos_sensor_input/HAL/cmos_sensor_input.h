@@ -28,6 +28,21 @@ typedef enum cmos_sensor_input_debayer_pattern {RGGB, BGGR, GRBG, GBRG} cmos_sen
  ******************************************************************************/
 cmos_sensor_input_dev cmos_sensor_input_inst(void *base, uint8_t pix_depth, uint32_t max_width, uint32_t max_height, uint32_t output_width, uint32_t fifo_depth, bool debayer_enable, bool packer_enable);
 
+/*
+ * Helper macro for easily constructing device structures. The user needs to
+ * provide the component's prefix, and the corresponding device structure is
+ * returned.
+ */
+#define CMOS_SENSOR_INPUT_INST(prefix)                 \
+    cmos_sensor_input_inst(((void *) prefix ## _BASE), \
+                           prefix ## _PIX_DEPTH,       \
+                           prefix ## _MAX_WIDTH,       \
+                           prefix ## _MAX_HEIGHT,      \
+                           prefix ## _OUTPUT_WIDTH,    \
+                           prefix ## _FIFO_DEPTH,      \
+                           prefix ## _DEBAYER_ENABLE,  \
+                           prefix ## _PACKER_ENABLE)
+
 void cmos_sensor_input_init(cmos_sensor_input_dev *dev);
 
 void cmos_sensor_input_configure(cmos_sensor_input_dev *dev, bool irq, cmos_sensor_input_debayer_pattern pattern);

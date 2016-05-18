@@ -22,6 +22,14 @@ typedef struct i2c_dev {
 
 i2c_dev i2c_inst(void *base);
 
+/*
+ * Helper macro for easily constructing device structures. The user needs to
+ * provide the component's prefix, and the corresponding device structure is
+ * returned.
+ */
+#define I2C_INST(prefix)               \
+    i2c_inst((void *) prefix ## _BASE)
+
 void i2c_init(i2c_dev *dev, uint32_t i2c_frequency);
 
 void i2c_configure(i2c_dev *dev, bool irq);
