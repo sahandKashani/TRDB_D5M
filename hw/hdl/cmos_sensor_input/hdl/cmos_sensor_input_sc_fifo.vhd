@@ -9,9 +9,9 @@ use work.cmos_sensor_input_constants.all;
 
 entity cmos_sensor_input_sc_fifo is
     generic(
-        constant DATA_WIDTH    : positive;
-        constant FIFO_DEPTH    : positive;
-        constant DEVICE_FAMILY : string
+        DATA_WIDTH    : positive;
+        FIFO_DEPTH    : positive;
+        DEVICE_FAMILY : string
     );
     port(
         clk      : in  std_logic;
