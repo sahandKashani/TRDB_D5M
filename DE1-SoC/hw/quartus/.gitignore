@@ -1,0 +1,12 @@
+# Ignore everything in this directory
+/*
+/*/
+
+# Except these files
+!.gitignore
+!ip/
+!system.qsys
+!trdb_d5m.qpf
+!trdb_d5m.qsf
+!trdb_d5m.qsys
+!trdb_d5m.sdc
