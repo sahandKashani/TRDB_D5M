@@ -29,7 +29,7 @@ ALT_LDDEPS :=
 MAKEABLE_LIBRARY_ROOT_DIRS :=
 
 # Generic flags passed to the compiler for different types of input files.
-ALT_CFLAGS := --std=gnu11
+ALT_CFLAGS :=
 ALT_CXXFLAGS :=
 ALT_CPPFLAGS :=
 ALT_ASFLAGS :=
@@ -143,11 +143,11 @@ ELF := trdb_d5m_demo.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS += demo.c
-C_SRCS += ../../hw/hdl/msgdma/HAL/msgdma.c
-C_SRCS += ../../hw/hdl/i2c/HAL/i2c.c
-C_SRCS += ../../hw/hdl/cmos_sensor_input/HAL/cmos_sensor_input.c
-C_SRCS += ../../hw/hdl/cmos_sensor_acquisition/HAL/cmos_sensor_acquisition.c
+C_SRCS += msgdma/msgdma.c
 C_SRCS += trdb_d5m/trdb_d5m.c
+C_SRCS += i2c/i2c.c
+C_SRCS += cmos_sensor_input/cmos_sensor_input.c
+C_SRCS += cmos_sensor_acquisition/cmos_sensor_acquisition.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -182,13 +182,13 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := /home/sahand/Documents/Development/github/TRDB_D5M/sw/trdb_d5m_demo_bsp/
+BSP_ROOT_DIR := /home/sahand/Documents/Development/github/TRDB_D5M/DE0-Nano/sw/trdb_d5m_demo_bsp/
 
 # List of application specific include directories, library directories and library names
-APP_INCLUDE_DIRS += ../../hw/hdl/cmos_sensor_input/HAL
-APP_INCLUDE_DIRS += ../../hw/hdl/msgdma/HAL
-APP_INCLUDE_DIRS += ../../hw/hdl/cmos_sensor_acquisition/HAL
-APP_INCLUDE_DIRS += ../../hw/hdl/i2c/HAL
+APP_INCLUDE_DIRS += cmos_sensor_acquisition
+APP_INCLUDE_DIRS += cmos_sensor_input
+APP_INCLUDE_DIRS += i2c
+APP_INCLUDE_DIRS += msgdma
 APP_INCLUDE_DIRS += trdb_d5m
 APP_LIBRARY_DIRS :=
 APP_LIBRARY_NAMES :=
@@ -197,7 +197,7 @@ APP_LIBRARY_NAMES :=
 BUILD_PRE_PROCESS :=
 BUILD_POST_PROCESS :=
 
-QUARTUS_PROJECT_DIR := /home/sahand/Documents/Development/github/TRDB_D5M/hw/quartus/
+QUARTUS_PROJECT_DIR := /home/sahand/Documents/Development/github/TRDB_D5M/DE0-Nano/hw/quartus/
 
 
 #END GENERATED

@@ -85,6 +85,8 @@ bool write_ppm(uint16_t *frame, uint32_t width, uint32_t height, const char *fil
 }
 
 int main(void) {
+    printf("test\n");
+
     /*
      * instantiate camera control structure
      */
